@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bella Cucina | Authentic Italian Dining</title>
+    <style>
+        /* Global Styles */
+        html, body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Playfair Display', serif;
+            background-color: #f9f5f0;
+            color: #333;
+            scroll-behavior: smooth;
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: #8b0000;
+            letter-spacing: 1px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            font-size: 2rem;
+            border-bottom: 2px solid #d4a76a;
+            padding-bottom: 0.5rem;
+            margin: 2rem 0 1.5rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            color: #5c3a21;
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('http://localhost:3001/output_images/maajovzl-2z6i6fft/1_sophisticated-italian-restaurant-interior_1080x1080.png');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: rgba(139, 0, 0, 0.7);
+            border-radius: 10px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        nav {
+            background-color: #5c3a21;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav li {
+            margin: 0 1.5rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+        }
+
+        nav a:hover {
+            background-color: #8b0000;
+            transform: translateY(-2px);
+        }
+
+        /* Menu Sections */
+        .menu-section {
+            padding: 4rem 0;
+            background-color: white;
+            margin: 2rem 0;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .menu-item {
+            display: flex;
+            margin-bottom: 2rem;
+            align-items: flex-start;
+            transition: all 0.3s ease;
+            padding: 1rem;
+            border-radius: 8px;
+        }
+
+        .menu-item:hover {
+            background-color: #f9f5f0;
+            transform: translateX(5px);
+        }
+
+        .menu-item img {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-right: 1.5rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .menu-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .menu-item-content {
+            flex: 1;
+        }
+
+        .price {
+            font-weight: bold;
+            color: #8b0000;
+            font-size: 1.2rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Special Sections */
+        .specials {
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('http://localhost:3001/output_images/maajovzl-2z6i6fft/6_rustic-dining-ambiance.png');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .specials h2 {
+            color: #d4a76a;
+            border-bottom-color: #d4a76a;
+        }
+
+        .wine-pairing {
+            background-color: #f0e6d9;
+            padding: 3rem 0;
+            margin: 3rem 0;
+            border-radius: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #5c3a21;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .menu-item {
+                flex-direction: column;
+            }
+
+            .menu-item img {
+                width: 100%;
+                height: auto;
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav li {
+                margin: 0.5rem 0;
+            }
+        }
+
+        /* Animations */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .highlight {
+            animation: pulse 2s infinite;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            background-color: #8b0000;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            margin-top: 1rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .btn:hover {
+            background-color: #5c3a21;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        /* Wine Pairing Section */
+        .wine-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .wine-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .wine-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+        }
+
+        .wine-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .wine-card-content {
+            padding: 1.5rem;
+        }
+    </style>
+
+<base target="_self">
+
+
+    <header>
+        <div class="hero-content">
+            <h1>Bella Cucina</h1>
+            <p>Authentic Italian Cuisine Since 1985</p>
+            <a href="#menu" class="btn">View Our Menu</a>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#about" style="background-color: transparent;">About</a></li>
+            <li><a href="#menu" style="background-color: transparent;">Menu</a></li>
+            <li><a href="#specials" style="background-color: transparent;">Specials</a></li>
+            <li><a href="#wine" style="background-color: transparent;">Wine Pairings</a></li>
+            <li><a href="#contact" style="background-color: transparent;">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <section id="about" class="menu-section">
+            <h2>Our Story</h2>
+            <div style="display: flex; align-items: center; gap: 2rem; margin-bottom: 2rem;">
+                <img src="http://localhost:3001/output_images/maajovzl-2z6i6fft/10_chef-preparing-pasta.png" alt="Chef preparing pasta" style="width: 300px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+                <div>
+                    <p>Founded in 1985 by Chef Giovanni Rossi, Bella Cucina brings the authentic flavors of Italy to your table. Our recipes have been passed down through generations, using only the finest ingredients imported directly from Italy.</p>
+                    <p>Every dish is prepared with love and tradition, creating an unforgettable dining experience that transports you to the heart of Tuscany.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="menu" class="menu-section">
+            <h2>Our Menu</h2>
+
+            <h3>Antipasti (Starters)</h3>
+            <div class="menu-item">
+                <img src="http://localhost:3001/output_images/maajovzl-2z6i6fft/2_bruschetta-classica-on-wooden-board_1080x1080.png" alt="Bruschetta Classica">
+                <div class="menu-item-content">
+                    <h4>Bruschetta Classica</h4>
+                    <p>Toasted bread topped with fresh tomato, garlic, basil, and extra virgin olive oil</p>
+                    <div class="price">$12</div>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <img src="http://localhost:3001/output_images/maajovzl-2z6i6fft/2_crispy-calamari-fritti-with-dips_1080x1080.png" alt="Calamari Fritti">
+                <div class="menu-item-content">
+                    <h4>Calamari Fritti</h4>
+                    <p>Crispy fried squid with lemon aioli and marinara sauce</p>
+                    <div class="price">$16</div>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <img src="http://localhost:3001/output_images/maajovzl-2z6i6fft/8_caprese-salad.png" alt="Caprese Salad">
+                <div class="menu-item-content">
+                    <h4>Caprese Salad</h4>
+                    <p>Buffalo mozzarella, vine-ripened tomatoes, basil, and balsamic glaze</p>
+                    <div class="price">$14</div>
+                </div>
+            </div>
+
+            <h3>Primi (Pasta &amp; Risotto)</h3>
+            <div class="menu-item">
+                <img src="http://localhost:3001/output_images/maajovzl-2z6i6fft/2_spaghetti-carbonara-fork-twirl_1080x1080.png" alt="Spaghetti Carbonara">
+                <div class="menu-item-content">
+                    <h4>Spaghetti Carbonara</h4>
+                    <p>Al dente pasta with creamy egg yolk, pancetta, pecorino, and black pepper</p>
+                    <div class="price">$22</div>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <img src="http://localhost:3001/output_images/maajovzl-2z6i6fft/3_risotto-ai-funghi.png" alt="Risotto ai Funghi">
+                <div class="menu-item-content">
+                    <h4>Risotto ai Funghi</h4>
+                    <p>Creamy Arborio rice with wild mushrooms, white wine, and Parmesan</p>
+                    <div class="price">$24</div>
+                </div>
+            </div>
+
+            <h3>Secondi (Mains)</h3>
+            <div class="menu-item">
+                <img src="http://localhost:3001/output_images/maajovzl-2z6i6fft/9_pollo-alla-parmigiana.png" alt="Pollo alla Parmigiana">
+                <div class="menu-item-content">
+                    <h4>Pollo alla Parmigiana</h4>
+                    <p>Breaded chicken breast topped with tomato sauce and melted mozzarella</p>
+                    <div class="price">$26</div>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <img src="http://localhost:3001/output_images/maajovzl-2z6i6fft/4_bistecca-alla-fiorentina.png" alt="Bistecca alla Fiorentina">
+                <div class="menu-item-content">
+                    <h4>Bistecca alla Fiorentina</h4>
+                    <p>Grilled T-bone steak with rosemary, olive oil, and roasted potatoes</p>
+                    <div class="price">$42</div>
+                </div>
+            </div>
+
+            <h3>Dolci (Desserts)</h3>
+            <div class="menu-item">
+                <img src="http://localhost:3001/output_images/maajovzl-2z6i6fft/2_tiramisu-in-glass-cup_1080x1080.png" alt="Tiramisu">
+                <div class="menu-item-content">
+                    <h4>Tiramisu</h4>
+                    <p>Espresso-soaked ladyfingers layered with mascarpone cream</p>
+                    <div class="price">$10</div>
+                </div>
+            </div>
+
+            <div class="menu-item">
+                <img src="http://localhost:3001/output_images/maajovzl-2z6i6fft/5_panna-cotta.png" alt="Panna Cotta">
+                <div class="menu-item-content">
+                    <h4>Panna Cotta</h4>
+                    <p>Silky vanilla custard with fresh berry compote</p>
+                    <div class="price">$9</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="specials" class="specials">
+            <div class="container">
+                <h2>Chef's Specials</h2>
+                <div class="menu-item">
+                    <img src="http://localhost:3001/output_images/maajovzl-2z6i6fft/11_chefs-special-truffle-tagliatelle.png" alt="Truffle Tagliatelle">
+                    <div class="menu-item-content">
+                        <h4>Truffle Tagliatelle</h4>
+                        <p>Handmade tagliatelle pasta with black truffle cream sauce and shaved Parmigiano-Reggiano</p>
+                        <div class="price highlight">$32</div>
+                    </div>
+                </div>
+
+                <div class="menu-item">
+                    <img src="http://localhost:3001/output_images/maajovzl-2z6i6fft/13_osso-buco-special.png" alt="Osso Buco">
+                    <div class="menu-item-content">
+                        <h4>Osso Buco</h4>
+                        <p>Braised veal shanks with gremolata and saffron risotto</p>
+                        <div class="price highlight">$38</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="wine" class="wine-pairing">
+            <h2>Wine Pairings</h2>
+            <p>Our sommelier has carefully selected these wines to complement your meal:</p>
+
+            <div class="wine-grid">
+                <div class="wine-card">
+                    <img src="http://localhost:3001/output_images/maajovzl-2z6i6fft/12_wine-pairing-chianti-bistecca.png" alt="Chianti Classico">
+                    <div class="wine-card-content">
+                        <h4>Chianti Classico</h4>
+                        <p>Perfect with our Bistecca alla Fiorentina. Bold tannins and cherry notes.</p>
+                        <div class="price">$15/glass | $60/bottle</div>
+                    </div>
+                </div>
+
+                <div class="wine-card">
+                    <img src="http://localhost:3001/output_images/maajovzl-2z6i6fft/7_wine-pairing-display.png" alt="Pinot Grigio">
+                    <div class="wine-card-content">
+                        <h4>Pinot Grigio</h4>
+                        <p>Excellent with seafood and lighter pasta dishes. Crisp and refreshing.</p>
+                        <div class="price">$12/glass | $48/bottle</div>
+                    </div>
+                </div>
+
+                <div class="wine-card">
+                    <img src="http://localhost:3001/output_images/maajovzl-2z6i6fft/15_chef-preparing-risotto.png" alt="Barolo">
+                    <div class="wine-card-content">
+                        <h4>Barolo</h4>
+                        <p>Pairs beautifully with rich meat dishes and truffle pastas. Complex and elegant.</p>
+                        <div class="price">$25/glass | $95/bottle</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="menu-section">
+            <h2>Make a Reservation</h2>
+            <p>Join us for an unforgettable dining experience. Reserve your table today.</p>
+            <a href="tel:+15551234567" class="btn">Call: (555) 123-4567</a>
+            <p style="margin-top: 2rem;">123 Via Italia, New York, NY 10001</p>
+            <p>Open Tuesday - Sunday: 5pm - 11pm</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Bella Cucina. All rights reserved.</p>
+            <p>Authentic Italian Cuisine</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Highlight current section in navigation
+        window.addEventListener('scroll', function() {
+            let fromTop = window.scrollY + 100;
+            
+            document.querySelectorAll('nav a').forEach(link => {
+                let section = document.querySelector(link.getAttribute('href'));
+                
+                if (
+                    section.offsetTop <= fromTop &&
+                    section.offsetTop + section.offsetHeight > fromTop
+                ) {
+                    link.style.backgroundColor = '#8b0000';
+                } else {
+                    link.style.backgroundColor = 'transparent';
+                }
+            });
+        });
+
+        // Image hover effect
+        document.querySelectorAll('.menu-item img').forEach(img => {
+            img.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.05)';
+                this.style.boxShadow = '0 8px 16px rgba(0,0,0,0.2)';
+            });
+            
+            img.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1)';
+                this.style.boxShadow = '0 4px 8px rgba(0,0,0,0.1)';
+            });
+        });
+    </script>
+
+              
+          
+                
+          
+              
